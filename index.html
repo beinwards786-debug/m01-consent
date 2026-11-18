@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://cdn.jsdelivr.net; style-src 'unsafe-inline'; connect-src https://fgigscakgriftbeysiis.supabase.co; base-uri 'none'; form-action 'none'">
+<title>M01 connection consent</title>
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;max-width:30rem;margin:2rem auto;padding:0 1rem;line-height:1.45}
+  button{font:inherit;padding:.6rem 1rem;margin:.25rem .25rem .25rem 0;cursor:pointer}
+  input{font:inherit;padding:.5rem;width:100%;box-sizing:border-box;margin:.25rem 0 .75rem}
+  .err{color:#b00020}.box{border:1px solid #ccc;border-radius:.5rem;padding:1rem;margin:1rem 0}
+</style>
+</head>
+<body>
+<h1>M01 connection consent</h1>
+<p id="status">Loading…</p>
+<div id="login" class="box" hidden>
+  <p>Sign in to approve or deny this connection. Only the Owner account can use the tool.</p>
+  <label>Email<input id="email" type="email" autocomplete="username"></label>
+  <label>Password<input id="password" type="password" autocomplete="current-password"></label>
+  <button id="signin" type="button">Sign in</button>
+</div>
+<div id="consent" class="box" hidden>
+  <p>Signed in as <strong id="who"></strong></p>
+  <p>Application requesting access: <strong id="client"></strong></p>
+  <p>It will return to: <code id="redirect"></code></p>
+  <p>Requested permissions:</p>
+  <ul id="scopes"></ul>
+  <button id="approve" type="button">Approve</button>
+  <button id="deny" type="button">Deny</button>
+</div>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.1/dist/umd/supabase.js" integrity="sha384-2DeuFKyqIlpZfFmj+jl/+IbM3DwDM4vGKsvK0fI32E0ZDt24W33hB6pka4RAdbz2" crossorigin="anonymous"></script>
+<script src="consent.js"></script>
+</body>
+</html>
